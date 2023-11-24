@@ -188,16 +188,18 @@ ul.errorlist {
 }
 
 .product-list .item {
-    width:25%;
-    padding:10px 20px 10px 0;
-    float:left;
-    text-align:center;
-    line-height:1.2;
+    width: 25%;
+    padding: 10px 20px 10px 0;
+    float: left;
+    text-align: center;
+    line-height: 1.2;
+    position: relative; /* Добавлено для корректного позиционирования */
 }
 
 .product-list .item img {
-    width:100%;
-    margin-bottom:8px;
+    width: 100%; /* Ширина 100%, чтобы изображение занимало всю ширину блока */
+    height: 200px; /* Фиксированная высота изображений, можно изменить на нужное значение */
+    object-fit: cover; /* Обеспечивает сохранение пропорций изображений при изменении размеров */
 }
 
 .product-detail {
