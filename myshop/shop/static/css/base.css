@@ -4,6 +4,7 @@ body {
     margin:0;
     padding:0;
     font-family:helvetica, sans-serif;
+    ackground-color: #f0f0f0; /* Добавлено фоновое цвет для примера */
 }
 
 h1, h2, h3, h4, h5 , h6 {
@@ -194,6 +195,14 @@ ul.errorlist {
     text-align: center;
     line-height: 1.2;
     position: relative; /* Добавлено для корректного позиционирования */
+    border: 1px solid #ddd; /* Добавлен контур для эффекта глубины */
+    background-color: #fff; /* Добавлен цвет фона */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавлено тень для подчеркивания глубины */
+    transition: box-shadow 0.3s ease-in-out; /* Плавное изменение тени при наведении */
+}
+
+.product-list .item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличенный эффект тени при наведении */
 }
 
 .product-list .item img {
