@@ -130,7 +130,7 @@ LANGUAGE_CODE = 'en'
 LANGUAGES = (
     ('en', _('English')),
     ('es', _('Spanish')),
-    ('re', _('Russian')),
+    ('ru', _('Russian')),
 )
 
 TIME_ZONE = 'UTC'
