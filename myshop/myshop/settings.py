@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'cart',
     'orders',
     'coupons',
-    'rosetta'
+    'rosetta',
+    'parler',
 ]
 
 MIDDLEWARE = [
@@ -129,9 +130,20 @@ LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
     ('en', _('English')),
-    ('es', _('Spanish')),
     ('ru', _('Russian')),
 )
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'ru'},
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_untranslated': False,
+    }
+}
+
 
 TIME_ZONE = 'UTC'
 

@@ -29,21 +29,37 @@
     </div>
 </div>
 <div id="subheader">
+<!--    <div class="cart">-->
+<!--        {% with total_items=cart|length %}-->
+<!--            {% if cart|length > 0 %}-->
+<!--                {% trans "Your cart" %}:-->
+<!--                <a href="{% url "cart:cart_detail" %}">-->
+<!--                    {% blocktrans with total_items_plural=total_items|pluralize total_price=cart.get_total_price %}-->
+<!--                        {{ total_items }} item{{ total_items_plural }},-->
+<!--                        ${{ total_price }}-->
+<!--                    {% endblocktrans %}-->
+<!--                </a>-->
+<!--            {% else %}-->
+<!--                {% trans "Your cart is empty." %}-->
+<!--            {% endif %}-->
+<!--        {% endwith %}-->
+<!--    </div>-->
     <div class="cart">
-        {% with total_items=cart|length %}
-            {% if cart|length > 0 %}
-                {% trans "Your cart" %}:
-                <a href="{% url "cart:cart_detail" %}">
-                    {% blocktrans with total_items_plural=total_items|pluralize total_price=cart.get_total_price %}
-                        {{ total_items }} item{{ total_items_plural }},
-                        ${{ total_price }}
-                    {% endblocktrans %}
-                </a>
-            {% else %}
-                {% trans "Your cart is empty." %}
-            {% endif %}
-        {% endwith %}
+    {% if cart|length > 0 %}
+        {% trans "Your cart" %}:
+        <a href="{% url "cart:cart_detail" %}">
+            {% language LANGUAGE_CODE %}
+                {% blocktrans with total_items=cart|length %}
+                    {{ total_items }} item{{ total_items|pluralize }},
+                    ${{ cart.get_total_price }}
+                {% endblocktrans %}
+            {% endlanguage %}
+        </a>
+    {% else %}
+        {% trans "Your cart is empty." %}
+    {% endif %}
     </div>
+
 </div>
 <div id="content">
     {% block content %}

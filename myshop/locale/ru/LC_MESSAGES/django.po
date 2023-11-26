@@ -8,32 +8,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-24 22:56+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2023-11-26 22:00+0300\n"
+"PO-Revision-Date: 2023-11-26 15:53+0000\n"
+"Last-Translator:   <a@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: cart/forms.py:8
-msgid "Quantity"
-msgstr "Количество"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: coupons/forms.py:6
 msgid "Coupon"
 msgstr "Купон"
 
-#: myshop/settings.py:129
+#: myshop/settings.py:132
 msgid "English"
 msgstr "Английский"
 
-#: myshop/settings.py:130
-msgid "Spanish"
-msgstr "Испанский"
-
-#: myshop/settings.py:131
+#: myshop/settings.py:133
 msgid "Russian"
 msgstr "Русский"
 
@@ -41,23 +34,56 @@ msgstr "Русский"
 msgid "My shop"
 msgstr "Мой магазин"
 
-#: shop/templates/shop/base.html:20
+#: shop/templates/shop/base.html:19
+msgid "Language"
+msgstr "Язык"
+
+#: shop/templates/shop/base.html:35 shop/templates/shop/base.html:49
 msgid "Your cart"
 msgstr "Ваша корзина"
 
-#: shop/templates/shop/base.html:22
+#: shop/templates/shop/base.html:37
+#, python-format
+msgid ""
+"-->\n"
+"<!--                        %(total_items)s item%(total_items_plural)s,-->\n"
+"<!--                        $%(total_price)s-->\n"
+"<!--                    "
+msgstr ""
+
+#: shop/templates/shop/base.html:43 shop/templates/shop/base.html:59
+msgid "Your cart is empty."
+msgstr "Ваша корзина пустая"
+
+#: shop/templates/shop/base.html:52
 #, python-format
 msgid ""
 "\n"
-"                        %(total_items)s item%(total_items_plural)s,\n"
-"                        $%(total_price)s\n"
-"                    "
+"                    %(total_items)s item%(total_items|pluralize)s,\n"
+"                    $%(cart.get_total_price)s\n"
+"                "
 msgstr ""
-
-#: shop/templates/shop/base.html:28
-msgid "Your cart is empty."
-msgstr "Ваша корзина пустая"
+"\n"
+"                    %(total_items)s кол-во%(total_items|pluralize)s,\n"
+"                    $%(cart.get_total_price)s\n"
+"                "
 
 #: shop/templates/shop/product/detail.html:16
 msgid "Add to cart"
 msgstr "Добавить в корзину"
+
+#: shop/templates/shop/product/list.html:4
+#: shop/templates/shop/product/list.html:21
+msgid "Products"
+msgstr "Продукты"
+
+#: shop/templates/shop/product/list.html:8
+msgid "Categories"
+msgstr "Категории"
+
+#: shop/templates/shop/product/list.html:11
+msgid "All"
+msgstr "Все"
+
+#~ msgid "Quantity"
+#~ msgstr "Количество"

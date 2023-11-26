@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-26 22:17+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: templates/shop/base.html:8 templates/shop/base.html:14
+msgid "My shop"
+msgstr ""
+
+#: templates/shop/base.html:19
+msgid "Language"
+msgstr ""
+
+#: templates/shop/base.html:35 templates/shop/base.html:49
+msgid "Your cart"
+msgstr ""
+
+#: templates/shop/base.html:37
+#, python-format
+msgid ""
+"-->\n"
+"<!--                        %(total_items)s item%(total_items_plural)s,-->\n"
+"<!--                        $%(total_price)s-->\n"
+"<!--                    "
+msgstr ""
+
+#: templates/shop/base.html:43 templates/shop/base.html:59
+msgid "Your cart is empty."
+msgstr ""
+
+#: templates/shop/base.html:52
+#, python-format
+msgid ""
+"\n"
+"                    %(total_items)s item%(total_items|pluralize)s,\n"
+"                    $%(cart.get_total_price)s\n"
+"                "
+msgstr ""
+
+#: templates/shop/product/detail.html:16
+msgid "Add to cart"
+msgstr ""
+
+#: templates/shop/product/list.html:4 templates/shop/product/list.html:21
+msgid "Products"
+msgstr ""
+
+#: templates/shop/product/list.html:8
+msgid "Categories"
+msgstr ""
+
+#: templates/shop/product/list.html:11
+msgid "All"
+msgstr ""
