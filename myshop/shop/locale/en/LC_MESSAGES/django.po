@@ -50,6 +50,10 @@ msgid ""
 "                    $%(cart.get_total_price)s\n"
 "                "
 msgstr ""
+"\n"
+"                    %(total_items)s item%(total_items|pluralize)s,\n"
+"                    ₽%(cart.get_total_price)s\n"
+"                "
 
 #: templates/shop/product/detail.html:16
 msgid "Add to cart"
