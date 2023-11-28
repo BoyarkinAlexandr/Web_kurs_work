@@ -33,6 +33,7 @@ urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls')),
     path('orders/', include('orders.urls')),
+    path('invoices/', include('invoices.urls')),
     path('coupons/', include('coupons.urls')),
     path('rosetta/', include('rosetta.urls')),
     path('', include('shop.urls', namespace='shop')),

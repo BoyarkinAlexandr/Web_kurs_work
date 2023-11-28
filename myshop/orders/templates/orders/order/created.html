@@ -9,4 +9,9 @@
         {% trans "Your order has been successfully completed. Your order number is" %}
         <strong>{{ order.id }}</strong>.
     </p>
+
+    {# Добавляем кнопку для скачивания PDF #}
+    <a href="{% url 'invoice_pdf' order.id %}" class="btn btn-primary" target="_blank">
+        {% trans "Download Invoice PDF" %}
+    </a>
 {% endblock %}
