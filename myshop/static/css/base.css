@@ -242,32 +242,42 @@ ul.errorlist {
 }
 
 .order-info {
-    float:right;
-    width:300px;
-    background:#efefef;
-    padding:10px 20px;
-    color:#333;
-    border-bottom:4px solid #5993bb;
+    float: right;
+    width: 300px;
+    background: #efefef;
+    padding: 10px 20px;
+    color: #333;
+    border-bottom: 4px solid #5993bb;
+    display: flex; /* Добавлено свойство display: flex */
+    flex-direction: column; /* Это свойство устанавливает направление колонок, чтобы элементы были друг под другом */
 }
 
 .order-info h3 {
-    color:#5993bb;
+    color: #5993bb;
+    margin-bottom: 10px; /* Добавлен отступ снизу для разделения заголовка от списка */
+}
+
+.order-info ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 .order-info ul li {
-    margin:0;
-    padding:0;
-    font-size:14px;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    margin-bottom: 5px; /* Добавлен отступ снизу между элементами списка */
 }
 
 .order-info p {
-    font-weight:bold;
-    float:right;
+    font-weight: bold;
+    margin-top: 10px; /* Добавлен отступ сверху для разделения списка и общей суммы */
 }
 
 .order-info span {
-    float:right;
+    float: right;
 }
+
 
 .neg {
     color:#dc1616;
