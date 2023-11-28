@@ -35,8 +35,8 @@
                     <td>{{ product.name }}</td>
                     <td>{{ item.quantity }}</td>
                     <td><a href="{% url "cart:cart_remove" product.id%}">{% trans "Remove" %}</a></td>
-                    <td class="num">${{ item.price }}</td>
-                    <td class="num">${{ item.total_price }}</td>
+                    <td class="num">₽{{ item.price }}</td>
+                    <td class="num">₽{{ item.total_price }}</td>
                 </tr>
             {% endwith %}
         {% endfor %}
@@ -44,7 +44,7 @@
             <tr class="subtotal">
                 <td>{% trans "Subtotal" %}</td>
                 <td colspan="4"></td>
-                <td class="num">${{ cart.get_total_price }}</td>
+                <td class="num">₽{{ cart.get_total_price }}</td>
             </tr>
             <tr>
                 <td>
@@ -53,7 +53,7 @@
                 </td>
                 <td colspan="4"></td>
                 <td class="num neg">
-                    - ${{ cart.get_discount|floatformat:"2" }}
+                    - ₽{{ cart.get_discount|floatformat:"2" }}
                 </td>
             </tr>
         {% endif %}
@@ -61,7 +61,7 @@
             <td>{% trans "Total" %}</td>
             <td colspan="4"></td>
             <td class="num">
-                ${{ cart.get_total_price_after_discount|floatformat:"2" }}
+                ₽{{ cart.get_total_price_after_discount|floatformat:"2" }}
             </td>
         </tr>
         </tbody>
