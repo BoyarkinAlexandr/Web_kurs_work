@@ -1,8 +1,10 @@
 {% extends "shop/base.html" %}
 {% load static i18n %}
+
 {% block title %}
     {% if category %}{% trans category.name %}{% else %}{% trans "Products" %}{% endif %}
 {% endblock %}
+
 {% block content %}
     <div id="sidebar">
         <h3>{% trans "Categories" %}</h3>
@@ -10,7 +12,7 @@
             <li {% if not category %}class="selected"{% endif %}>
                 <a href="{% url "shop:product_list" %}">{% trans "All" %}</a>
             </li>
-            {% for c in category %}
+            {% for c in categories %}  {# Исправлено на categories #}
                 <li {% if category.slug == c.slug %}class="selected"{% endif %}>
                     <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
                 </li>

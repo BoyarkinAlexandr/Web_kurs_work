@@ -11,17 +11,18 @@ def product_list(request, category_slug=None):
         current_lang = get_language()
         if current_lang != lang:
             activate(lang)
-            request.session[get_language()] = lang
+            request.session[get_language] = lang
             return redirect(request.path)
 
     category = None
     categories = Category.objects.all()
     products = Product.objects.filter(available=True)
     if category_slug:
-        language = get_language()  # используем get_language() вместо request.LANGUAGE_CODE
+        language = request.LANGUAGE_CODE
         category = get_object_or_404(Category,
-                                     translations__language=language,
+                                     translations__language_code=language,
                                      translations__slug=category_slug)
+
         products = products.filter(category=category)
 
     return render(request,
