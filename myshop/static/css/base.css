@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #87CEEB;
 }
 
 h1, h2, h3, h4, h5 , h6 {
@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5 , h6 {
 
 a {
     text-decoration:none;
-    color:#5993bb;
+    color:#00008B;
 }
 
 a:hover {
@@ -21,8 +21,8 @@ a:hover {
 }
 
 a.button, input[type="submit"] {
-    color:#fff;
-    background:#5993bb;
+    color:#00008B;
+    background:#5894bb;
     border-radius:4px;
     padding:10px 20px;
     font-size:14px;
@@ -30,8 +30,8 @@ a.button, input[type="submit"] {
 }
 
 a.button.light {
-    color:#666;
-    background:#ededed;
+    color:#00008b;
+    background:#5894bb;
 }
 
 .text-left {
@@ -124,8 +124,8 @@ ul.errorlist {
 }
 
 #subheader {
-    background:#ececec;
-    color:#444;
+    background:#87CEEB;
+    color: #00008B;
     padding:15px 100px;
     overflow:auto;
 }
@@ -175,7 +175,7 @@ ul.errorlist {
 }
 
 #sidebar ul li.selected a {
-    color:#fff;
+    color: #00008B;
 }
 #footer p {
     font-size: smaller;

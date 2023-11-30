@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-26 22:32+0300\n"
+"POT-Creation-Date: 2023-11-30 16:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,3 +75,7 @@ msgstr "Спасибо"
 #: templates/orders/order/created.html:9
 msgid "Your order has been successfully completed. Your order number is"
 msgstr "Ваш заказ был завершен успешно. Номер вашего заказа"
+
+#: templates/orders/order/created.html:15
+msgid "Download Invoice PDF"
+msgstr "Скачать PDF файл чека"
