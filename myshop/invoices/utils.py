@@ -2,22 +2,20 @@ from reportlab.pdfgen import canvas
 from io import BytesIO
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-import locale
 from django.utils.translation import get_language
-
 
 def create_invoice_pdf(order):
     language = get_language()
     buffer = BytesIO()
 
-    # Регистрируем шрифт из локального файла
+    # Register the font from a local file
     pdfmetrics.registerFont(TTFont('Ubuntu', 'static/fonts/Roboto-Black.ttf'))
 
-    # Создаем PDF-документ с указанным шрифтом
+    # Create a PDF document with the specified font
     p = canvas.Canvas(buffer)
-    p.setFont('Ubuntu', 12)  # Замените 12 на нужный вам размер шрифта
+    p.setFont('Ubuntu', 12)
 
-    # Определение заголовков в зависимости от языка сайта
+    # Define headers based on the site language
     if language == 'ru':
         text_dict = {
             'invoice': 'Счет на оплату по заказу',
@@ -33,7 +31,7 @@ def create_invoice_pdf(order):
             'total': 'Total',
         }
     else:
-        # Если выбран неизвестный язык, используем английские заголовки по умолчанию
+        # Use English headers by default if an unknown language is selected
         text_dict = {
             'invoice': 'Invoice for order',
             'separator': '----------------------------------------',
@@ -41,7 +39,7 @@ def create_invoice_pdf(order):
             'total': 'Total',
         }
 
-    # Добавляем текст и форматирование
+    # Add text and formatting
     p.drawString(100, 800, f'{text_dict["invoice"]} #{order.id}')
     p.drawString(100, 780, text_dict["separator"])
     p.drawString(100, 760, text_dict["header"])
@@ -49,17 +47,18 @@ def create_invoice_pdf(order):
     y = 740
     for item in order.items.all():
         product_name = item.product.name[:20] if len(item.product.name) > 20 else item.product.name
-        p.drawString(100, y, f'{product_name:20} {item.quantity:10} {item.get_total_price():.2f}')
+        # Adjust the X-coordinate for the Quantity column
+        p.drawString(100, y, f'{product_name:20} {item.quantity:^10}   {item.get_total_price():.2f}')
         y -= 20
 
     p.drawString(100, y, text_dict["separator"])
     p.drawString(100, y - 20, f'{text_dict["total"]}: {order.get_total_cost():.4f}')
 
-    # Закрываем PDF
+    # Close the PDF
     p.showPage()
     p.save()
 
-    # Сбрасываем буфер
+    # Reset the buffer
     buffer.seek(0)
 
     return buffer
